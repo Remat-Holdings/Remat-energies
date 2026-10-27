@@ -1718,6 +1718,38 @@ section.section{ padding: 4.5rem 0; }
 }
 
 /* ============================================================
+   Leadership Team page
+   ============================================================ */
+
+.leader-heading{ margin-bottom: 1.2rem; }
+.leader-intro{ text-align:center; max-width: 900px; margin: 0 auto 3.5rem; }
+
+/* Leader cards: 3 across with round photos, wrapping down to 1 on phones */
+.leader-grid{
+  list-style:none; margin:0 auto; padding:0; max-width: 1000px;
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 3.5rem 2rem;
+}
+.leader-card{ text-align:center; }
+.leader-photo{
+  display:flex; align-items:center; justify-content:center;
+  width: 190px; aspect-ratio: 1; margin: 0 auto 1.1rem; overflow:hidden;
+  border-radius: 50%;
+  background: linear-gradient(160deg, var(--cream) 0%, var(--cream-dark) 55%, var(--steel) 100%);
+  font-family: var(--serif-head); font-size: 2.6rem; font-weight: 700; color: var(--navy-text);
+}
+.leader-photo img{ width:100%; height:100%; object-fit:cover; }
+.leader-card h3{ font-size: 1.05rem; margin: 0 0 0.35rem; }
+.leader-title{ font-size: 0.9rem; font-weight: 600; color: var(--steel); margin: 0; }
+
+@media (max-width: 900px){
+  .leader-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px){
+  .leader-grid{ grid-template-columns: 1fr; }
+  .leader-photo{ width: 170px; }
+}
+
+/* ============================================================
    Quality Policy page
    ============================================================ */
 
