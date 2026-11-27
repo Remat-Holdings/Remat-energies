@@ -1,6 +1,10 @@
 // Header dropdown menus (Services, Solutions, About Us)
 (function () {
-  var dropdowns = document.querySelectorAll('.has-dropdown');
+  // Skip menus whose arrow is hidden (e.g. Insights while its pages are hidden)
+  var dropdowns = Array.prototype.filter.call(
+    document.querySelectorAll('.has-dropdown'),
+    function (d) { return d.querySelector('.dropdown-toggle'); }
+  );
   if (!dropdowns.length) return;
 
   function setOpen(dropdown, isOpen) {
